@@ -1,16 +1,72 @@
 {
   "quotes": [
     {
+            "character": "David Brent",
+            "text": "I suppose I've created an atmosphere where I'm a friend first and a boss second. Probably an entertainer third."
+        },
+        {
+            "character": "Tim & Gareth",
+            "text": "Gareth: What am I thinking about now? / Tim: How could I kill a tiger armed only with a biro? / Gareth: No. / Tim: If I crash land in the Andes, do I eat the others?"
+        },
+        {
+            "character": "Gareth Keenan",
+            "text": "Will there ever be a boy born who can swim faster than a shark?"
+        },
+        {
+            "character": "David Brent",
+            "text": "If you want the rainbow, you've got to put up with the rain. Do you know which 'philosopher' said that? Dolly Parton."
+        },
+        {
+            "character": "Tim Canterbury",
+            "text": "The people you work with are just people you were thrown together with. You don't know them, it wasn't your choice."
+        },
+        {
+            "character": "David Brent",
+            "text": "Does a struggling salesman start sorting out his life? No, he starts sorting out his desk."
+        },
+        {
+            "character": "Gareth Keenan",
+            "text": "I can read women. I can see it in their eyes. They go 'Oh, he's a bit of all right, but I shouldn't because I'm married'."
+        },
+        {
+            "character": "David Brent",
+            "text": "A problem shared is a problem halved, so is your problem really yours or just half of someone else's?"
+        },
+        {
+            "character": "Chris Finch",
+            "text": "I can read a book a week. I just choose not to."
+        },
+        {
+            "character": "David Brent",
+            "text": "You just have to accept that some days you are the pigeon, and some days you are the statue."
+        },
+        {
+            "character": "Gareth Keenan",
+            "text": "My dad was in the army, and he always used to say to me 'Gareth, a problem shared is a problem halved'. He's dead now."
+        },
+        {
+            "character": "Tim Canterbury",
+            "text": "I just don't think there's any point in being unhappy. You know, you just gotta get on with it."
+        },
+        {
+            "character": "David Brent",
+            "text": "Quitters never win, winners never quit. But those who never win and never quit are idiots."
+        },
+        {
+            "character": "David Brent",
+            "text": "I don't live by 'The Rules' you know. And if there's one other person who has influenced me in that way I think, someone who is a maverick, someone who does that to the system, then, it's Ian Botham."
+        },
+        {
       "character": "Gareth Keenan",
       "text": "My dad, for example, he's not as cosmopolitan or as educated as me and it can be embarrasing you know. He doesn't understand all the new trendy words - like he'll say 'poofs' instead of 'gays', 'birds' instead of 'women', 'darkies' instead of 'coloureds'."
     },
     {
       "character": "Tim Canterbury",
-      "text": "The people you work with are people you were just thrown together with. I mean, you don't know them, it wasn't your choice. And yet you spend more time with them than you do your friends or your family. But probably all you have in common is the fact that you walk around on the same bit of carpet for eight hours a day."
+      "text": "The people you work with are people you were just thrown together with. I mean, you don't know them, it wasn't your choice."
     },
     {
       "character": "Gareth Keenan",
-      "text": "That's one reason why gays shouldn't be allowed into the army. Because if we're in battle, is he going to be looking at the enemy, or is he going to be looking at me and going 'Ooh. He looks tasty in his uniform'. And I'm not homophobic, all right? Come round, look at my CDs. You'll see Queen, George Michael, Pet Shop Boys. They're all bummers."
+      "text": "That's one reason why gays shouldn't be allowed into the army. Because if we're in battle, is he going to be looking at the enemy, or is he going to be looking at me and going 'Ooh. He looks tasty in his uniform'."
     },
     {
       "character": "Tim Canterbury",
@@ -34,7 +90,7 @@
     },
     {
       "character": "Tim Canterbury & Gareth Keenan",
-      "text": "Gareth: All right then Einstein if you're so clever, what am I thinking about now? / Tim: You're thinking how could I kill a tiger armed only with a biro? / Gareth: No. / Tim: You're thinking if I crash land in the jungle can I survive by eating my own shoes? / Gareth: No and no you can't. / Tim: What are you thinking Gareth? / Gareth: I was thinking will there ever be a boy born who can swim faster then a shark?"
+      "text": "Gareth: All right then Einstein if you're so clever, what am I thinking about now? / Tim: You're thinking how could I kill a tiger armed only with a biro?"
     },
     {
       "character": "David Brent",
