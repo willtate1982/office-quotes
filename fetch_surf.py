@@ -1,5 +1,6 @@
 import urllib.request
 import urllib.parse
+import urllib.error
 import json
 import os
 import sys
@@ -12,11 +13,9 @@ if not API_KEY:
     sys.exit(1)
 
 def fetch_data(target_url):
-    # The crucial addition: 'keep_headers': 'true'
     payload = {'api_key': API_KEY, 'url': target_url, 'keep_headers': 'true'}
     scraper_url = 'http://api.scraperapi.com/?' + urllib.parse.urlencode(payload)
     
-    # Send the disguise to ScraperAPI so it can pass it to Surfline
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept": "application/json",
@@ -25,8 +24,18 @@ def fetch_data(target_url):
     }
     
     req = urllib.request.Request(scraper_url, headers=headers)
-    with urllib.request.urlopen(req) as response:
-        return json.loads(response.read().decode())
+    
+    try:
+        with urllib.request.urlopen(req) as response:
+            return json.loads(response.read().decode())
+    except urllib.error.HTTPError as e:
+        print(f"\n--- HTTP ERROR {e.code} ---")
+        print(f"Failed URL: {scraper_url}")
+        print("Raw Response Body from Server:")
+        # This line forces Python to read the actual error page content
+        print(e.read().decode('utf-8', errors='ignore'))
+        print("------------------------\n")
+        raise e
 
 try:
     wave_url = f"https://services.surfline.com/kbyg/spots/forecasts/wave?spotId={SPOT_ID}&days=5&intervalHours=24"
@@ -56,5 +65,5 @@ try:
     print("Successfully generated surf.json")
     
 except Exception as e:
-    print(f"Error fetching data: {e}")
+    print(f"Script aborted due to error: {e}")
     sys.exit(1)
