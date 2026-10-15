@@ -1,14 +1,20 @@
 import urllib.request
+import urllib.error
 import json
+import sys
 
 SPOT_ID = "584204204e65fad6a77099d5" # Fonte da Telha
 
 def fetch_data(url):
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "en-US,en;q=0.9",
         "Origin": "https://www.surfline.com",
-        "Referer": "https://www.surfline.com/"
+        "Referer": "https://www.surfline.com/",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-site"
     }
     req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req) as response:
@@ -38,5 +44,9 @@ try:
         
     print("Successfully generated surf.json")
     
+except urllib.error.HTTPError as e:
+    print(f"SURFLINE BLOCKED THE REQUEST: HTTP Error {e.code}")
+    sys.exit(1)
 except Exception as e:
-    print(f"Error fetching data: {e}")
+    print(f"AN UNEXPECTED ERROR OCCURRED: {e}")
+    sys.exit(1)
