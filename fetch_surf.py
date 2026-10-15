@@ -13,7 +13,14 @@ if not API_KEY:
     sys.exit(1)
 
 def fetch_data(target_url):
-    payload = {'api_key': API_KEY, 'url': target_url, 'keep_headers': 'true'}
+    # Added 'premium' and 'render' to solve the Cloudflare JavaScript puzzle
+    payload = {
+        'api_key': API_KEY, 
+        'url': target_url, 
+        'keep_headers': 'true',
+        'premium': 'true',
+        'render': 'true'
+    }
     scraper_url = 'http://api.scraperapi.com/?' + urllib.parse.urlencode(payload)
     
     headers = {
@@ -32,7 +39,6 @@ def fetch_data(target_url):
         print(f"\n--- HTTP ERROR {e.code} ---")
         print(f"Failed URL: {scraper_url}")
         print("Raw Response Body from Server:")
-        # This line forces Python to read the actual error page content
         print(e.read().decode('utf-8', errors='ignore'))
         print("------------------------\n")
         raise e
