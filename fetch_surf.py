@@ -12,11 +12,19 @@ if not API_KEY:
     sys.exit(1)
 
 def fetch_data(target_url):
-    # Safely package the URL so ScraperAPI doesn't break at the '&' symbols
-    payload = {'api_key': API_KEY, 'url': target_url}
+    # The crucial addition: 'keep_headers': 'true'
+    payload = {'api_key': API_KEY, 'url': target_url, 'keep_headers': 'true'}
     scraper_url = 'http://api.scraperapi.com/?' + urllib.parse.urlencode(payload)
     
-    req = urllib.request.Request(scraper_url)
+    # Send the disguise to ScraperAPI so it can pass it to Surfline
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "application/json",
+        "Origin": "https://www.surfline.com",
+        "Referer": "https://www.surfline.com/"
+    }
+    
+    req = urllib.request.Request(scraper_url, headers=headers)
     with urllib.request.urlopen(req) as response:
         return json.loads(response.read().decode())
 
