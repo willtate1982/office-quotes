@@ -12,9 +12,9 @@ if not API_KEY:
     sys.exit(1)
 
 def fetch_data(target_url):
-    # Package the Surfline URL to be routed through ScraperAPI
-    encoded_url = urllib.parse.quote(target_url)
-    scraper_url = f"http://api.scraperapi.com?api_key={API_KEY}&url={encoded_url}"
+    # Safely package the URL so ScraperAPI doesn't break at the '&' symbols
+    payload = {'api_key': API_KEY, 'url': target_url}
+    scraper_url = 'http://api.scraperapi.com/?' + urllib.parse.urlencode(payload)
     
     req = urllib.request.Request(scraper_url)
     with urllib.request.urlopen(req) as response:
